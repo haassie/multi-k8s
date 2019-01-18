@@ -12,5 +12,5 @@ docker push haassie/multi-worker:$SHA
 
 kubectl apply -f k8s
 kubectl set image deployments/server-deployment server=haassie/multi-server:$SHA
-kubectl set image deployments/client-deployment server=haassie/multi-client:$SHA
-kubectl set image deployments/worker-deployment server=haassie/multi-worker:$SHA
+kubectl set image deployments/client-deployment client=haassie/multi-client:$SHA
+kubectl set image deployments/worker-deployment worker=haassie/multi-worker:$SHA
