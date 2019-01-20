@@ -1,0 +1,20 @@
+apiVersion: certmanager.k8s.io/v1aplha1
+kind: Certificate
+metadata:
+  name: richardhaeser-nl-tls
+spec:
+  secretName: richardhaeser-nl
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: richardhaeser.nl
+  dnsNames:
+    - richardhaeser.nl
+    - www.richardhaeser.nl
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - richardhaeser.nl
+          - www.richardhaeser.nl
